@@ -29,7 +29,7 @@ Capability que pueden hacer (en escencia, CRUD):
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-		
+
 		'local/calendar:createevent' => array(
 				'captype' => 'write',
 				'contextlevel' => xxx,
@@ -37,9 +37,9 @@ $capabilities = array(
 						'student' => CAP_ALLOW,
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
-									 ))
+				))
 		,
-		
+
 		'local/calendar:createcourse' => array(
 				'captype' => 'write',
 				'contextlevel' => xxx,
@@ -48,9 +48,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:createcalendar' => array(
 				'captype' => 'write',
 				'contextlevel' => xxx,
@@ -60,7 +60,7 @@ $capabilities = array(
 						'teacher' => CAP_ALLOW
 				))
 		,
-		
+
 		'local/calendar:readcalendar' => array(
 				'captype' => 'read',
 				'contextlevel' => xxx,
@@ -70,7 +70,7 @@ $capabilities = array(
 						'teacher' => CAP_ALLOW
 				))
 		,
-		
+
 		'local/calendar:readcalendarhistory' => array(
 				'captype' => 'read',
 				'contextlevel' => xxx,
@@ -79,7 +79,7 @@ $capabilities = array(
 						'manager' => CAP_ALLOW
 				))
 		,
-		
+
 		'local/calendar:readcourse' => array(
 				'captype' => 'read',
 				'contextlevel' => xxx,
@@ -88,9 +88,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:readevent' => array(
 				'captype' => 'read',
 				'contextlevel' => xxx,
@@ -99,9 +99,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:editevent' => array(
 				'captype' => 'edit',
 				'contextlevel' => xxx,
@@ -110,9 +110,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:editecourse' => array(
 				'captype' => 'edit',
 				'contextlevel' => xxx,
@@ -121,9 +121,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:editecalendarpreference' => array(
 				'captype' => 'edit',
 				'contextlevel' => xxx,
@@ -132,9 +132,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:deletecalendar' => array(
 				'captype' => 'delete',
 				'contextlevel' => xxx,
@@ -144,7 +144,7 @@ $capabilities = array(
 						'teacher' => CAP_ALLOW
 				))
 		,
-		
+
 		'local/calendar:deleteevent' => array(
 				'captype' => 'delete',
 				'contextlevel' => xxx,
@@ -153,9 +153,9 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
+
 		,
-		
+
 		'local/calendar:deletecourse' => array(
 				'captype' => 'delete',
 				'contextlevel' => xxx,
@@ -164,11 +164,11 @@ $capabilities = array(
 						'manager' => CAP_ALLOW,
 						'teacher' => CAP_ALLOW
 				))
-		
-		
-		
-		
-		
-		
-					  );
+
+
+
+
+
+
+);
 ?>
