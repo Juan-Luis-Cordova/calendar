@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+
+
+        <?php
+      $b=phpversion();
+      echo $b;
+
+	  $idDelete = $_Request['id'];
+
+      $b= new calendar;
+	 	$b->id=$idDelete
+	
+     $b->calendar_deleteevent();
+      
+        ?>
+
+Evento eliminado exitosamente
+
+</body>
+</html>
