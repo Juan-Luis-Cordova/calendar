@@ -29,5 +29,5 @@
 defined('MOODLE_INTERNAL') || die();
 $plugin->pluginname = "local_calendar";
 $plugin->component = 'local_calendar';
-$plugin->version   = '2016092701';
+$plugin->version   = '2016100601';
 ?>
