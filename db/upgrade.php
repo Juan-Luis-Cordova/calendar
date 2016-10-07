@@ -1,3 +1,4 @@
+
 <?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -8,37 +9,40 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle. If not, see <http://www.gnu.org/licenses/>.
 
-function xmldb_local_calendar_upgrade($oldversion) {
+
+function xmldb_local_calendar_upgrade($oldversion=0) {
 	global $CFG, $DB;
+
+	$dbman = $DB->get_manager();
+
+   if ($oldversion < 2016100601) {
+
+        // Define table events to be created.
+        $table = new xmldb_table('events');
+
+        // Adding fields to table events.
+        $table->add_field('id', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, XMLDB_SEQUENCE, null);
+        $table->add_field('name', XMLDB_TYPE_TEXT, null, null, null, null, null);
+        $table->add_field('day', XMLDB_TYPE_INTEGER, '2', null, null, null, null);
+        $table->add_field('month', XMLDB_TYPE_INTEGER, '2', null, null, null, null);
+        $table->add_field('module', XMLDB_TYPE_INTEGER, '1', null, null, null, null);
+
+        // Adding keys to table events.
+        $table->add_key('primary', XMLDB_KEY_PRIMARY, array('id'));
+
+        // Conditionally launch create table for events.
+        if (!$dbman->table_exists($table)) {
+            $dbman->create_table($table);
+        }
+
+        // Calendar savepoint reached.
+        upgrade_plugin_savepoint(true, 2016100601, 'local', 'calendar');
+    }
 	
-if ($oldversion < 2016092201) {
-
-	// Define table events to be created.
-	$table = new xmldb_table('events');
-
-	// Adding fields to table events.
-	$table->add_field('id', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, XMLDB_SEQUENCE, null);
-	$table->add_field('name', XMLDB_TYPE_TEXT, null, null, null, null, null);
-	$table->add_field('date', XMLDB_TYPE_TEXT, null, null, null, null, null);
-	$table->add_field('module', XMLDB_TYPE_TEXT, null, null, null, null, null);
-
-	// Adding keys to table events.
-	$table->add_key('primary', XMLDB_KEY_PRIMARY, array('id'));
-
-	// Conditionally launch create table for events.
-	if (!$dbman->table_exists($table)) {
-		$dbman->create_table($table);
-	}
-
-	// Calendar savepoint reached.
-	upgrade_plugin_savepoint(true, 2016092201, 'local', 'calendar');
-}
-
-
 ?>

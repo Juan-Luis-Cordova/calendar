@@ -18,12 +18,12 @@
 Aqui especifico las capability
 Lo que hacen y si es que pueden ejecutarlas
 Tipos de user:
-			manager, teacher y student
+			student
 Capability que pueden hacer (en escencia, CRUD): 
-			agregar eventos, agregar asignaturas, agregar calendarios
-			leer calendario actual, leer historial de calendarios, leer asignaturas, leer eventos
-			editar eventos, editar asignaturas, editar preferencias de calendario
-			borrar eventos, borrar asignaturas, borrar calendarios
+			agregar eventos
+			leer eventos del dia, leer todos los eventos
+			editar eventos
+			borrar eventos
 */
 	
 defined('MOODLE_INTERNAL') || die();
@@ -32,140 +32,47 @@ $capabilities = array(
 
 		'local/calendar:createevent' => array(
 				'captype' => 'write',
-				'contextlevel' => xxx,
+				'contextlevel' => CONTEXT_COURSE,
 				'archetypes' => array(
 						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
-		,
-
-		'local/calendar:createcourse' => array(
-				'captype' => 'write',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
-
-		,
-
-		'local/calendar:createcalendar' => array(
-				'captype' => 'write',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
 				))
 		,
 
 		'local/calendar:readcalendar' => array(
 				'captype' => 'read',
-				'contextlevel' => xxx,
+				'contextlevel' => CONTEXT_COURSE,
 				'archetypes' => array(
 						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
-		,
-
-		'local/calendar:readcalendarhistory' => array(
-				'captype' => 'read',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW
-				))
-		,
-
-		'local/calendar:readcourse' => array(
-				'captype' => 'read',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
 				))
 
 		,
 
 		'local/calendar:readevent' => array(
 				'captype' => 'read',
-				'contextlevel' => xxx,
+				'contextlevel' => CONTEXT_COURSE,
 				'archetypes' => array(
 						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
 				))
 
 		,
 
 		'local/calendar:editevent' => array(
-				'captype' => 'edit',
-				'contextlevel' => xxx,
+				'captype' => 'write',
+				'contextlevel' => CONTEXT_COURSE,
 				'archetypes' => array(
 						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
 				))
 
-		,
-
-		'local/calendar:editecourse' => array(
-				'captype' => 'edit',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
-
-		,
-
-		'local/calendar:editecalendarpreference' => array(
-				'captype' => 'edit',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
-
-		,
-
-		'local/calendar:deletecalendar' => array(
-				'captype' => 'delete',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
 		,
 
 		'local/calendar:deleteevent' => array(
-				'captype' => 'delete',
-				'contextlevel' => xxx,
+				'captype' => 'write',
+				'contextlevel' => CONTEXT_COURSE,
 				'archetypes' => array(
 						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
 				))
 
-		,
-
-		'local/calendar:deletecourse' => array(
-				'captype' => 'delete',
-				'contextlevel' => xxx,
-				'archetypes' => array(
-						'student' => CAP_ALLOW,
-						'manager' => CAP_ALLOW,
-						'teacher' => CAP_ALLOW
-				))
-
-
+		
 
 
 

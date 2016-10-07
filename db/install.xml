@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="local/calendar/db" VERSION="20160922" COMMENT="XMLDB file for Moodle local/calendar"
+<XMLDB PATH="local/calendar/db" VERSION="20161005" COMMENT="XMLDB file for Moodle local/calendar"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
-    <TABLE NAME="events" COMMENT="university events">
+    <TABLE NAME="events" COMMENT="aquí tendremos los eventos">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="name" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
-        <FIELD NAME="date" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="YYYY-MM-DD"/>
-        <FIELD NAME="module" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="UAI Module (1A,1B,2,3,4A,4B,5,6,7,8)"/>
+        <FIELD NAME="day" TYPE="int" LENGTH="2" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="month" TYPE="int" LENGTH="2" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="module" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
